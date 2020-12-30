@@ -1,8 +1,10 @@
 '''
 
  input: 2 matrix representing row walls( left wall and right wall) and col walls (up wall and down wall)
- robot = [] stack saves movment (d = down, u = up, r = right, l = left)
- cross = [] saves every cross
+
+ Some Details:
+	robot = [] stack saves movment (d = down, u = up, r = right, l = left)
+ 	cross = [] saves every cross
 
 '''
 import numpy
@@ -106,9 +108,7 @@ def show_me_the_way():
 			elif robot[len(robot)-1] == 'r':
 				rowWall[cross['state'][len(cross['state'])-1][0][0]][cross['state'][len(cross['state'])-1][0][1]] = 1
 			
-			robot.pop()		
-		else:
-			robot.pop()
+		robot.pop()
 
 	state = {'r':[cross['state'][len(cross['state'])-1][0][0], cross['state'][len(cross['state'])-1][0][1]], 'l': [cross['state'][len(cross['state'])-1][1][0], cross['state'][len(cross['state'])-1][1][1]], 'u': [cross['state'][len(cross['state'])-1][2][0], cross['state'][len(cross['state'])-1][2][1]], 'd': [cross['state'][len(cross['state'])-1][3][0], cross['state'][len(cross['state'])-1][3][1]]}
 	
